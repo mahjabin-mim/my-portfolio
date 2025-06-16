@@ -1,0 +1,121 @@
+body {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(to bottom right, #0f172a, #1f2937);
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: backgroundShift 15s ease-in-out infinite alternate;
+}
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a202c;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+.section-heading {
+  position: relative;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+.section-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 0px;
+  height: 4px;
+  background-color: #6b46c1;
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out;
+}
+.section-heading:hover::after {
+  width: 100px;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+.animate-blob {
+  animation: blob 7s infinite cubic-bezier(0.6, 0.01, 0.35, 1);
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.nav-item-hover {
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+.nav-item-hover::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #8b5cf6;
+  transition: width 0.3s ease-out;
+}
+.nav-item-hover:hover::after {
+  width: 100%;
+}
+.nav-item-hover:hover {
+  color: #d8b4fe;
+}
+
+.card-hover-effect {
+  transition: all 0.3s ease-in-out;
+}
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.skill-tag {
+  transition: all 0.2s ease-in-out;
+}
+.skill-tag:hover {
+  transform: translateY(-3px) rotate(2deg);
+  background-color: #7c3aed;
+}
